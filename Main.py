@@ -1,5 +1,6 @@
 from MainMenu import MENU_OPTIONS
-from users import create_user
+from finance.users import create_user 
+from finance.transections import add_transaction
 
 
 def show_menu():
@@ -16,5 +17,12 @@ while True:
             continue
 
         match choice:
-            case 0:
+            case 1:
                 create_user()
+
+            case 2:
+                add_transaction()
+
+            case 5:
+                  break
+            

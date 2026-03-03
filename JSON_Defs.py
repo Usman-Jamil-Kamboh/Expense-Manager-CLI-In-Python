@@ -1,9 +1,8 @@
 import json
-from MainMenu import DATA_FILE
 
 def load_data():
     try:
-        with open(DATA_FILE, "r") as file:
+        with open("database.json", "r") as file:
             return json.load(file)
     except FileNotFoundError:
         return {"users": {}, "transactions": []}
@@ -12,5 +11,5 @@ def load_data():
         return {"users": {}, "transactions": []}
 
 def save_data(data):
-    with open(DATA_FILE, "w") as file:
+    with open("database.json", "w") as file:
         json.dump(data, file, indent=4)

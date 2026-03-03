@@ -1,4 +1,3 @@
-DATA_FILE = "data/database.json"
 DATE_FORMAT = "%d-%m-%Y"
 
 MENU_OPTIONS = {

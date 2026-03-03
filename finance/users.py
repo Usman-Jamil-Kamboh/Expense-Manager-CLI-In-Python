@@ -1,11 +1,11 @@
-import datetime
-from JSON_Defs import load_data , save_data
+from JSON_Defs import load_data, save_data
 from validators import (
     validate_username,
     validate_email,
     validate_amount,
     validate_date
 )
+from datetime import datetime
 
 def create_user():
     data = load_data()
@@ -14,7 +14,6 @@ def create_user():
     if not validate_username(username):
         print("Invalid username format.")
         return
-
 
     if username in data["users"]:
         print("User already exists.")
