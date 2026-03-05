@@ -8,11 +8,24 @@ from validators import (
 )
 
 
+def view_transactions():
+    data = load_data()
+
+    if not data["transactions"]:
+        print("No transactions found.")
+        return
+
+    for idx, t in enumerate(data["transactions"], start=1):
+        print(
+            f"{idx}. {t['user']} | {t['type']} | "
+            f"{t['amount']} | {t['category']} | {t['date']}"
+        )
+
 def add_transaction():
     data = load_data()
 
     username = input("Enter username: ")
-    if username not in data["users"]:
+    if username.lower() not in data["users"]:
         print("User does not exist.")
         return
 

@@ -24,7 +24,7 @@ def create_user():
         print("Invalid email format.")
         return
 
-    data["users"][username] = {
+    data["users"][username.lower()] = {
         "email": email,
         "created_at": datetime.now().isoformat()
     }
