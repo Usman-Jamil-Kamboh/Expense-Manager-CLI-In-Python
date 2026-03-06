@@ -1,5 +1,7 @@
 import datetime
 from JSON_Defs import load_data , save_data
+from collections import defaultdict
+from math import fsum
 from validators import (
     validate_username,
     validate_email,
@@ -57,3 +59,20 @@ def add_transaction():
     data["transactions"].append(transaction)
     save_data(data)
     print("Transaction added successfully.")
+
+def monthly_report():
+    data = load_data()
+    monthly_totals = defaultdict(list)
+
+    for t in data["transactions"]:
+        month = t["date"][:7]
+        if t["type"] == "expense":
+            monthly_totals[month].append(t["amount"])
+
+    if not monthly_totals:
+        print("No expense data available.")
+        return
+
+    for month, amounts in monthly_totals.items():
+        total = fsum(amounts)
+        print(f"{month} → Total Expense: {total}")

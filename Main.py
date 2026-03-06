@@ -1,6 +1,6 @@
 from MainMenu import MENU_OPTIONS
 from finance.users import create_user 
-from finance.transections import view_transactions , add_transaction
+from finance.transections import view_transactions , add_transaction , monthly_report
 
 
 def show_menu():
@@ -25,6 +25,9 @@ while True:
 
             case 3:
                 view_transactions()
+
+            case 4:
+                monthly_report()
 
             case 5:
                   break
