@@ -27,25 +27,7 @@ Input validation system
 
 Modular project structure
 
-Project Architecture
 
-Your project follows a modular design, separating responsibilities across different modules.
 
-Expense-Manager-CLI-In-Python
-│
-├── Main.py
-├── MainMenu.py
-├── JSON_Defs.py
-├── validators.py
-│
-└── finance
-    ├── users.py
-    ├── transactions.py
-Module Responsibilities
-File	Responsibility
-Main.py	Program entry point
-MainMenu.py	CLI menu logic
-users.py	User creation and management
-transactions.py	Transaction handling
-validators.py	Input validation
 JSON_Defs.py	JSON storage structure
+
